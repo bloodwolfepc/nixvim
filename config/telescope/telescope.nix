@@ -89,7 +89,7 @@
     {
       mode = "n";
       key = "<leader>ff";
-      action = "<cmd>Telescope live_grep<CR>";
+      action = "<cmd>Telescope find_files<CR>";
       options = {
         desc = "Fuzzy Grep Files";
         silent = true;
