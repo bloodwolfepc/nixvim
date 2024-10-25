@@ -7,6 +7,7 @@
       vimwiki
     ];
     #extraConfigLua = ''
+
     #  g:vimwiki_list = [{"path":"~/notebook/", "syntax": "markdown", "ext": ".md"}]
     #'';
   #extraConfigLua =''

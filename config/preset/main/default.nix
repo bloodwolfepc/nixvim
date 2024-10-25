@@ -9,7 +9,7 @@
     conform.enable = true;
     dap.enable = true;
     gitsigns.enable = true;
-    hardtime.enable = false;
+    hardtime.enable = true;
     indent-blankline.enable = true;
     lazygit.enable = true;
     lint.enable = true;
@@ -41,14 +41,12 @@
     wilder.enable = true;
     vim-surround.enable = true;
     none-ls.enable = true;
-    lspsaga.enable = true;
+    #lspsaga.enable = true;
     diffview.enable = true;
 
   };
-  extraPlugins = with pkgs.vimPlugins; [
-    vimwiki
-    cmp-vimwiki-tags
-  ];
+  #extraPlugins = with pkgs.vimPlugins; [
+  #];
 }
 
 #toggleterm

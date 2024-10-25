@@ -7,36 +7,91 @@
       enable = true;
       settings = {
         notify_on_error = true;
+        # default_format_opts = {
+        #   lsp_format = "fallback";
+        # };
+        # format_after_save = {
+        #   lsp_format = "fallback";
+        # };
+        format_on_save = {
+          timeoutMs = 500;
+          lspFallback = true;
+        };
         formatters_by_ft = {
-          html = [["prettierd" "prettier"]];
-          css = [["prettierd" "prettier"]];
-          javascript = [["prettierd" "prettier"]];
-          javascriptreact = [["prettierd" "prettier"]];
-          typescript = [["prettierd" "prettier"]];
-          typescriptreact = [["prettierd" "prettier"]];
-          java = ["google-java-format"];
-          python = ["black"];
-          lua = ["stylua"];
-          nix = ["alejandra"];
-          markdown = [["prettierd" "prettier"]];
-          rust = ["rustfmt"];
+          html = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          css = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          javascriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          typescriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          java = [ "google-java-format" ];
+          python = [ "black" ];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          markdown = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          rust = [ "rustfmt" ];
         };
       };
     };
     keymaps = [
       {
         mode = "n";
-        key = "<leader>cf";
+        key = "<leader>ct";
+        action = ":FormatToggle<CR>";
+        options = {
+          desc = "toggle format globally";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>cT";
+        action = ":FormatToggle!<CR>";
+        options = {
+          desc = "Toggle Format Locally";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>cc";
         action = "<cmd>lua require('conform').format()<cr>";
         options = {
           silent = true;
           desc = "Format Buffer";
         };
       }
-
       {
         mode = "v";
-        key = "<leader>cF";
+        key = "<leader>cl";
         action = "<cmd>lua require('conform').format()<cr>";
         options = {
           silent = true;
