@@ -53,3 +53,4 @@
 #wakatime
 #neocord
 #copilot-lua
+#lspsaga
