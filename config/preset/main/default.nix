@@ -45,8 +45,9 @@
     diffview.enable = true;
 
   };
-  #extraPlugins = with pkgs.vimPlugins; [
-  #];
+  extraPlugins = with pkgs.vimPlugins; [
+    eyeliner-nvim
+  ];
 }
 
 #toggleterm
