@@ -1,0 +1,30 @@
+{
+  imports = [
+    ./alpha
+    ./better-escape
+    ./bufferline
+    ./cmp
+    ./conform
+    ./dap
+    ./gitsigns
+    ./hardtime
+    ./indent-blankline
+    ./keymaps
+    ./lazygit
+    ./lint
+    ./lsp
+    ./lualine
+    ./luasnip
+    ./markdown-preview
+    ./neogit
+    ./oil
+    ./options
+    ./telescope
+    ./treesitter
+    ./trouble
+    ./undotree
+    ./vimtex
+    ./vimwiki
+    ./yanky
+  ];
+}

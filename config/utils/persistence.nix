@@ -1,3 +1,0 @@
-{
-  plugins.persistence.enable = false;
-}

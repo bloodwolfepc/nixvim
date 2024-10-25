@@ -1,3 +1,0 @@
-{
-  plugins.wilder.enable = true;
-}

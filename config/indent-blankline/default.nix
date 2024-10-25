@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./indent-blankline.nix
+  ];
+}

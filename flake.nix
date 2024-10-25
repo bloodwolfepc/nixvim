@@ -1,12 +1,10 @@
 {
-  description = "A nixvim configuration";
-
+  description = "bloodowlfepc neovim config";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
-
   outputs =
     { nixvim, flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -22,25 +20,26 @@
         let
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
-          nixvimModule = {
+          main = {
             inherit pkgs;
-            module = import ./config; # import the module directly
-            # You can use `extraSpecialArgs` to pass additional arguments to your module files
-            extraSpecialArgs = {
-              # inherit (inputs) foo;
-            };
+            module = import ./config/preset/main;
           };
-          nvim = nixvim'.makeNixvimWithModule nixvimModule;
+          minimal = {
+            inherit pkgs;
+            module = import ./config/preset/minimal;
+          };
+          main' = nixvim'.makeNixvimWithModule main;
+          minimal' = nixvim'.makeNixvimWithModule minimal;
         in
         {
           checks = {
-            # Run `nix flake check .` to verify that your config is not broken
-            default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+            default = nixvimLib.check.mkTestDerivationFromNixvimModule main;
+            minimal = nixvimLib.check.mkTestDerivationFromNixvimModule minimal;
           };
 
           packages = {
-            # Lets you run `nix run .` to start nixvim
-            default = nvim;
+            default = main';
+            minimal = minimal';
           };
         };
     };
