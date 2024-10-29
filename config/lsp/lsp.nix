@@ -24,6 +24,7 @@
           yamlls.enable = true;
           nixd.enable = true;
           #java-language-server.enable = true;
+          texlab.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = true;
