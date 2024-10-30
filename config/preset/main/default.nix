@@ -41,7 +41,7 @@
     wilder.enable = true;
     nvim-surround.enable = true;
     none-ls.enable = true;
-    lspsaga.enable = true;
+    #lspsaga.enable = true;
     diffview.enable = true;
 
   };
