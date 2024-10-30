@@ -39,9 +39,9 @@
     todo-comments.enable = true;
     which-key.enable = true;
     wilder.enable = true;
-    vim-surround.enable = true;
+    nvim-surround.enable = true;
     none-ls.enable = true;
-    #lspsaga.enable = true;
+    lspsaga.enable = true;
     diffview.enable = true;
 
   };

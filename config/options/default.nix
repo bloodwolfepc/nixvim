@@ -24,7 +24,7 @@
       splitbelow = true;
       splitright = true;
       swapfile = false;
-      timeoutlen = 10;
+      timeoutlen = 300; #higher times needed for surround-nvim
       updatetime = 50;
       writebackup = false;
       expandtab = true;

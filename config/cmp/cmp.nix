@@ -37,6 +37,7 @@
       cmp-nvim-lua.enable = true;
       cmp_luasnip.enable = true;
       cmp-vimwiki-tags.enable = true;
+      cmp-latex-symbols.enable = true;
     };
   };
 }
