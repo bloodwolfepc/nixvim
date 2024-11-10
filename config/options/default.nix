@@ -56,6 +56,8 @@
       vim.g.netrw_banner = 0
       vim.g.netrw_mouse = 2
       vim.g.editorconfig = true --UNKNOWN
+
+      vim.g.rust_recommended_style = false
     '';
   };
 }
