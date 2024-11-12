@@ -25,15 +25,34 @@
           nixd.enable = true;
           #java-language-server.enable = true;
           texlab.enable = true;
-          rust_analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
-
+          #rust_analyzer = {
+          #  enable = true;
+          #  installCargo = true;
+          #  installRustc = true;
+          #  settings = {
+          #    checkOnSave = true;
+          #    check = {
+          #      command = "clippy";
+          #    };
+          #  };
+          #};
         };
       };
-      #rustaceanvim.enable = true;
+      rustaceanvim = {
+        enable = true;
+        settings = {
+          default_settings.rust-analyzer = {
+            check = {
+              command = "clippy";
+              allTargets = true;
+            };
+            inlayHints = {
+              maxLength = 99;
+              lifetimeElisionHints.enable = "always";
+            };
+          };
+        };
+      };
       nvim-jdtls = {
         enable = true;
         cmd = [ 
