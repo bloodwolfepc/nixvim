@@ -33,6 +33,7 @@
 
         };
       };
+      #rustaceanvim.enable = true;
       nvim-jdtls = {
         enable = true;
         cmd = [ 
